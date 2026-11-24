@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeoTrips | Sua próxima viagem começa aqui</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* MENU */
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.96);
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .navbar-brand {
+            color: rgb(41, 86, 87) !important;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: rgb(41, 86, 87) !important;
+        }
+
+        /* INÍCIO */
+
+        .inicio {
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+                url("Vista Aérea da Costa Tropical.png");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .inicio h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .botao-principal {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 30px;
+            background-color: rgb(41, 86, 87);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .botao-principal:hover {
+            background-color: #23494a;
+            color: white;
+        }
+
+        /* SEÇÕES */
+
+        .area {
+            background-color: white;
+            margin: 45px auto;
+            padding: 45px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1250px;
+        }
+
+        .titulo {
+            text-align: center;
+            color: rgb(41, 86, 87);
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        /* AGÊNCIAS */
+
+        .grade-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .card-agencia {
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-agencia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.09);
+        }
+
+        .card-agencia img {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            padding: 18px;
+            background-color: #f8f9f9;
+        }
+
+        .card-conteudo {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-conteudo h3 {
+            color: rgb(41, 86, 87);
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-conteudo p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .card-conteudo a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: rgb(41, 86, 87);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 12px;
+            transition: 0.3s;
+        }
+
+        .card-conteudo a:hover {
+            background-color: #23494a;
+        }
+
+        /* VALORES */
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .valor-item {
+            background-color: #f4f7f6;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .valor-item h3 {
+            color: rgb(41, 86, 87);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .valor-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* DESTINOS */
+
+        .destinos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .destino {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .destino img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .destino:hover img {
+            transform: scale(1.05);
+        }
+
+        .destino h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 35px 15px 15px;
+            margin: 0;
+            color: white;
+            font-size: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+        }
+
+        /* TRANSPORTES */
+
+        .transportes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .transporte {
+            background-color: #f4f7f6;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .transporte h3 {
+            color: rgb(41, 86, 87);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .transporte p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: rgb(41, 86, 87);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 900px) {
+
+            .grade-cards,
+            .destinos-grid,
+            .transportes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .valores-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .grade-cards,
+            .destinos-grid,
+            .transportes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .area {
+                width: 94%;
+                padding: 25px 18px;
+                margin: 25px auto;
+            }
+
+            .inicio h1 {
+                font-size: 34px;
+            }
+
+            .inicio p {
+                font-size: 15px;
+            }
+
+            .titulo {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#inicio">GeoTrips</a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#agencias">Agências</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#valores">Planejamento</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinos">Destinos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deslocamento">Transportes</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- INÍCIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div>
+
+            <h1>Explore o mundo com a GeoTrips</h1>
+
+            <p>
+                Descubra novos lugares, conheça culturas e encontre
+                inspirações para planejar sua próxima viagem.
+            </p>
+
+            <a href="#agencias" class="botao-principal">
+                Conheça as agências
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- AGÊNCIAS -->
+
+    <section class="area" id="agencias">
+
+        <h2 class="titulo">Agências de Viagens</h2>
+
+        <p class="subtitulo">
+            Conheça algumas agências que podem ajudar você a planejar sua viagem.
+        </p>
+
+        <div class="grade-cards">
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (10).png" alt="CVC Viagens">
+
+                <div class="card-conteudo">
+
+                    <h3>CVC Viagens</h3>
+
+                    <p>
+                        A CVC oferece pacotes de viagens nacionais e internacionais,
+                        com opções de hospedagem, passagens e passeios.
+                    </p>
+
+                    <a href="https://www.cvc.com.br/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (12).png" alt="Decolar">
+
+                <div class="card-conteudo">
+
+                    <h3>Decolar</h3>
+
+                    <p>
+                        A Decolar é uma plataforma de viagens que permite pesquisar
+                        passagens, hotéis, pacotes e outros serviços turísticos.
+                    </p>
+
+                    <a href="https://www.decolar.com/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (11).png" alt="Azul Viagens">
+
+                <div class="card-conteudo">
+
+                    <h3>Azul Viagens</h3>
+
+                    <p>
+                        A Azul Viagens oferece pacotes turísticos e opções de
+                        destinos para quem deseja viajar pelo Brasil e pelo mundo.
+                    </p>
+
+                    <a href="https://www.azulviagens.com.br/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (13).png" alt="Agaxtur">
+
+                <div class="card-conteudo">
+
+                    <h3>Agaxtur</h3>
+
+                    <p>
+                        A Agaxtur trabalha com viagens nacionais e internacionais,
+                        oferecendo experiências e roteiros para diferentes perfis.
+                    </p>
+
+                    <a href="https://www.agaxtur.com.br/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (15).png" alt="Teresa Perez Tours">
+
+                <div class="card-conteudo">
+
+                    <h3>Teresa Perez Tours</h3>
+
+                    <p>
+                        A agência é especializada em viagens personalizadas,
+                        com roteiros exclusivos e experiências diferenciadas.
+                    </p>
+
+                    <a href="https://www.teresaperez.com.br/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-agencia">
+
+                <img src="Design sem nome (14).png" alt="BeFly Travel">
+
+                <div class="card-conteudo">
+
+                    <h3>BeFly Travel</h3>
+
+                    <p>
+                        A BeFly reúne serviços e soluções de turismo, oferecendo
+                        alternativas para organizar diferentes tipos de viagens.
+                    </p>
+
+                    <a href="https://www.befly.com.br/" target="_blank">
+                        Conhecer agência
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PLANEJAMENTO E VALORES -->
+
+    <section class="area" id="valores">
+
+        <h2 class="titulo">Planeje sua viagem</h2>
+
+        <p class="subtitulo">
+            Alguns pontos importantes para organizar uma viagem.
+        </p>
+
+        <div class="valores-grid">
+
+            <div class="valor-item">
+
+                <h3>Defina seu orçamento</h3>
+
+                <p>
+                    Estabeleça quanto pretende gastar e considere despesas
+                    com passagens, hospedagem, alimentação e passeios.
+                </p>
+
+            </div>
+
+            <div class="valor-item">
+
+                <h3>Pesquise os preços</h3>
+
+                <p>
+                    Compare diferentes agências e opções de hospedagem
+                    para encontrar alternativas que atendam às suas necessidades.
+                </p>
+
+            </div>
+
+            <div class="valor-item">
+
+                <h3>Organize o roteiro</h3>
+
+                <p>
+                    Escolha os lugares que deseja conhecer e distribua
+                    os passeios de acordo com o tempo disponível.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DESTINOS -->
+
+    <section class="area" id="destinos">
+
+        <h2 class="titulo">Destinos pelo mundo</h2>
+
+        <p class="subtitulo">
+            Inspire-se com alguns lugares incríveis para conhecer.
+        </p>
+
+        <div class="destinos-grid">
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800" alt="Rio de Janeiro">
+
+                <h3>Rio de Janeiro - Brasil</h3>
+
+            </div>
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Paris">
+
+                <h3>Paris - França</h3>
+
+            </div>
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800" alt="Kyoto">
+
+                <h3>Kyoto - Japão</h3>
+
+            </div>
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800" alt="Itália">
+
+                <h3>Itália</h3>
+
+            </div>
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Dubai">
+
+                <h3>Dubai - Emirados Árabes</h3>
+
+            </div>
+
+            <div class="destino">
+
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Paisagem natural">
+
+                <h3>Destinos naturais</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TRANSPORTES -->
+
+    <section class="area" id="deslocamento">
+
+        <h2 class="titulo">Meios de transporte</h2>
+
+        <p class="subtitulo">
+            Existem diferentes maneiras de chegar ao seu destino.
+        </p>
+
+        <div class="transportes-grid">
+
+            <div class="transporte">
+
+                <h3>Avião</h3>
+
+                <p>
+                    Uma opção rápida para viagens longas e destinos
+                    nacionais ou internacionais.
+                </p>
+
+            </div>
+
+            <div class="transporte">
+
+                <h3>Ônibus</h3>
+
+                <p>
+                    Uma alternativa para viagens entre cidades,
+                    geralmente com diferentes opções de horários.
+                </p>
+
+            </div>
+
+            <div class="transporte">
+
+                <h3>Carro</h3>
+
+                <p>
+                    Permite maior liberdade para escolher trajetos,
+                    horários e paradas durante a viagem.
+                </p>
+
+            </div>
+
+            <div class="transporte">
+
+                <h3>Trem</h3>
+
+                <p>
+                    Uma maneira confortável de viajar e apreciar
+                    as paisagens ao longo do caminho.
+                </p>
+
+            </div>
+
+            <div class="transporte">
+
+                <h3>Navio</h3>
+
+                <p>
+                    Muito utilizado em cruzeiros, permite conhecer
+                    diferentes destinos durante o percurso.
+                </p>
+
+            </div>
+
+            <div class="transporte">
+
+                <h3>Transporte público</h3>
+
+                <p>
+                    Uma opção prática para se locomover dentro
+                    das cidades e conhecer os pontos turísticos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <h3>GeoTrips</h3>
+
+        <p>Explore novos lugares. Viva novas experiências.</p>
+
+        <p>© 2026 GeoTrips - Todos os direitos reservados.</p>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+

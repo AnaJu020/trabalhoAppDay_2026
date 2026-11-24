@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeoTrips</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url("Vista Aérea da Costa Tropical.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.58);
+            padding: 15px 30px;
+        }
+
+        .navbar-brand {
+            color: rgb(41, 86, 87);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+
+        .navbar-brand:hover {
+            color: rgb(41, 86, 87);
+        }
+
+        .nav-link {
+            color: rgb(41, 86, 87);
+            font-size: 16px;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            color: #1b4545;
+        }
+
+        .navbar-toggler {
+            border-color: rgb(41, 86, 87);
+        }
+
+        .contains-inline1 {
+            margin-top: 50px;
+            margin-left: 40px;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            ;
+        }
+
+        .contains-inline2 {
+            margin-top: 20px;
+            margin-left: 40px;
+            margin-bottom: 40px;
+            margin-right: 20px;
+        }
+
+        .card-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card-group .card {
+            border-radius: 15px !important;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .card-body button {
+            background-color: #285b5b;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+        }
+
+        .card-body button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .card-body button:hover {
+            background-color: #193f3f;
+        }
+
+        .card-group .card {
+            max-width: 350px;
+        }
+
+        .card-group {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <b>GeoTrips</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <div class="navbar-nav ms-auto">
+
+                    <a class="nav-link active" href="#">Agências de Viagem
+                    </a>
+
+                    <a class="nav-link" href="#">
+                        Valores
+                    </a>
+
+                    <a class="nav-link" href="#">
+                        Lugares Mais Visitados
+                    </a>
+
+                    <a class="nav-link" href="#">
+                        Deslocamento
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="contains-inline1">
+        <div class="card-group">
+            <div class="card">
+                <img src="Design sem nome (10).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">CVC Viagens</h4>
+                    <p class="card-text">A CVC é uma das empresas mais conhecidas do setor de turismo no Brasil.
+                        Fundada em 1972, oferece passagens aéreas, hospedagens, pacotes turísticos, cruzeiros e passeios
+                        para
+                        destinos nacionais e internacionais. Também conta com lojas físicas e atendimento digital para
+                        auxiliar
+                        os viajantes no planejamento de suas viagens.</p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.cvc.com.br/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Design sem nome (12).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">Decolar</h4>
+                    <p class="card-text">A Decolar é uma agência de viagens online que permite pesquisar e organizar
+                        diferentes
+                        partes de uma viagem em um só lugar. Em sua plataforma, os clientes encontram passagens aéreas,
+                        hotéis,
+                        pacotes de viagem e outros serviços turísticos, podendo comparar opções e escolher aquelas que
+                        melhor
+                        atendem às suas necessidades.
+                    </p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.decolar.com/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Design sem nome (11).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">Azul Viagens</h4>
+                    <p class="card-text"> A Azul Viagens é a operadora de turismo ligada à companhia aérea Azul. Oferece
+                        pacotes
+                        nacionais e internacionais que podem incluir passagens aéreas, hospedagem, traslados, passeios e
+                        ingressos.
+                        Seu objetivo é facilitar o planejamento das viagens, reunindo diferentes serviços em uma única
+                        experiência.</p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.azulviagens.com.br/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contains-inline2">
+        <div class="card-group">
+            <div class="card">
+                <img src="Design sem nome (13).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">Agaxtur</h4>
+                    <p class="card-text">A Agaxtur é uma agência brasileira com longa trajetória no mercado de turismo.
+                        Trabalha
+                        com pacotes de viagens, hotéis, cruzeiros, circuitos e roteiros personalizados. A empresa também
+                        oferece
+                        atendimento especializado para quem deseja planejar uma viagem de acordo com suas preferências.
+                    </p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.agaxtur.com.br/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Design sem nome (15).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">Teresa Perez Tours</h4>
+                    <p class="card-text">A Teresa Perez Tours é especializada em viagens personalizadas e experiências
+                        exclusivas.
+                        Seu trabalho envolve a criação de roteiros sob medida, com atenção aos interesses e ao estilo de
+                        cada viajante.
+                        A empresa oferece opções como viagens de luxo, safáris, cruzeiros, passeios culturais e
+                        experiências em diferentes
+                        partes do mundo.</p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.teresaperez.com.br/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Design sem nome (14).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">BeFly Travel</h4>
+                    <p class="card-text">A BeFly Travel faz parte do grupo BeFly e oferece soluções para quem deseja
+                        conhecer novos destinos.
+                        Trabalha com passagens aéreas, hospedagens, cruzeiros, aluguel de carros e pacotes turísticos. A
+                        empresa também
+                        disponibiliza atendimento personalizado para ajudar os clientes a organizar diferentes etapas da
+                        viagem.
+                    </p>
+                    <p class="card-text"><small class="fg-2"><button><a href="https://www.befly.com.br/">Saiba
+                                    Mais</a></button></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
